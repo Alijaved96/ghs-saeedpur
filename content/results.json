@@ -1,0 +1,1007 @@
+{
+  "result_sets": [
+    {
+      "title": "Class X - SSC-II Annual Examination 2026",
+      "exam": "SSC-II Annual Examination",
+      "class_name": "Class X",
+      "year": "2026",
+      "max_marks": 1000,
+      "active": true,
+      "students": [
+        {
+          "seat_no": "149273",
+          "student_name": "",
+          "father_name": "",
+          "marks": 890,
+          "grade": "A1",
+          "status": "Pass"
+        },
+        {
+          "seat_no": "149274",
+          "student_name": "",
+          "father_name": "",
+          "marks": 850,
+          "grade": "A",
+          "status": "Pass"
+        },
+        {
+          "seat_no": "149275",
+          "student_name": "",
+          "father_name": "",
+          "marks": 849,
+          "grade": "A",
+          "status": "Pass"
+        },
+        {
+          "seat_no": "149276",
+          "student_name": "",
+          "father_name": "",
+          "marks": 886,
+          "grade": "A1",
+          "status": "Pass"
+        },
+        {
+          "seat_no": "149277",
+          "student_name": "",
+          "father_name": "",
+          "marks": 737,
+          "grade": "B",
+          "status": "Pass"
+        },
+        {
+          "seat_no": "149278",
+          "student_name": "",
+          "father_name": "",
+          "marks": 873,
+          "grade": "A",
+          "status": "Pass"
+        },
+        {
+          "seat_no": "149279",
+          "student_name": "",
+          "father_name": "",
+          "marks": 906,
+          "grade": "A1",
+          "status": "Pass"
+        },
+        {
+          "seat_no": "149280",
+          "student_name": "",
+          "father_name": "",
+          "marks": 682,
+          "grade": "B",
+          "status": "Pass"
+        },
+        {
+          "seat_no": "149281",
+          "student_name": "",
+          "father_name": "",
+          "marks": 880,
+          "grade": "A1",
+          "status": "Pass"
+        },
+        {
+          "seat_no": "149282",
+          "student_name": "",
+          "father_name": "",
+          "marks": 793,
+          "grade": "A",
+          "status": "Pass"
+        },
+        {
+          "seat_no": "149283",
+          "student_name": "",
+          "father_name": "",
+          "marks": 745,
+          "grade": "B",
+          "status": "Pass"
+        },
+        {
+          "seat_no": "149284",
+          "student_name": "",
+          "father_name": "",
+          "marks": 716,
+          "grade": "B",
+          "status": "Pass"
+        },
+        {
+          "seat_no": "149285",
+          "student_name": "",
+          "father_name": "",
+          "marks": 857,
+          "grade": "A",
+          "status": "Pass"
+        },
+        {
+          "seat_no": "149286",
+          "student_name": "",
+          "father_name": "",
+          "marks": 846,
+          "grade": "A",
+          "status": "Pass"
+        },
+        {
+          "seat_no": "149287",
+          "student_name": "",
+          "father_name": "",
+          "marks": 778,
+          "grade": "A",
+          "status": "Pass"
+        },
+        {
+          "seat_no": "149288",
+          "student_name": "",
+          "father_name": "",
+          "marks": 770,
+          "grade": "A",
+          "status": "Pass"
+        },
+        {
+          "seat_no": "149289",
+          "student_name": "",
+          "father_name": "",
+          "marks": 394,
+          "grade": "Fail",
+          "status": "Fail"
+        },
+        {
+          "seat_no": "149290",
+          "student_name": "",
+          "father_name": "",
+          "marks": 880,
+          "grade": "A1",
+          "status": "Pass"
+        },
+        {
+          "seat_no": "149291",
+          "student_name": "",
+          "father_name": "",
+          "marks": 881,
+          "grade": "A1",
+          "status": "Pass"
+        },
+        {
+          "seat_no": "149292",
+          "student_name": "",
+          "father_name": "",
+          "marks": 821,
+          "grade": "A",
+          "status": "Pass"
+        },
+        {
+          "seat_no": "149293",
+          "student_name": "",
+          "father_name": "",
+          "marks": 640,
+          "grade": "C",
+          "status": "Pass"
+        },
+        {
+          "seat_no": "149294",
+          "student_name": "",
+          "father_name": "",
+          "marks": 726,
+          "grade": "B",
+          "status": "Pass"
+        },
+        {
+          "seat_no": "149295",
+          "student_name": "",
+          "father_name": "",
+          "marks": 678,
+          "grade": "B",
+          "status": "Pass"
+        },
+        {
+          "seat_no": "149296",
+          "student_name": "",
+          "father_name": "",
+          "marks": 827,
+          "grade": "A",
+          "status": "Pass"
+        },
+        {
+          "seat_no": "149297",
+          "student_name": "",
+          "father_name": "",
+          "marks": 864,
+          "grade": "A",
+          "status": "Pass"
+        },
+        {
+          "seat_no": "149298",
+          "student_name": "",
+          "father_name": "",
+          "marks": 418,
+          "grade": "Fail",
+          "status": "Fail"
+        },
+        {
+          "seat_no": "149299",
+          "student_name": "",
+          "father_name": "",
+          "marks": 734,
+          "grade": "B",
+          "status": "Pass"
+        },
+        {
+          "seat_no": "149300",
+          "student_name": "",
+          "father_name": "",
+          "marks": 793,
+          "grade": "A",
+          "status": "Pass"
+        },
+        {
+          "seat_no": "149301",
+          "student_name": "",
+          "father_name": "",
+          "marks": 850,
+          "grade": "A",
+          "status": "Pass"
+        },
+        {
+          "seat_no": "149302",
+          "student_name": "",
+          "father_name": "",
+          "marks": 870,
+          "grade": "A",
+          "status": "Pass"
+        },
+        {
+          "seat_no": "149303",
+          "student_name": "",
+          "father_name": "",
+          "marks": 770,
+          "grade": "A",
+          "status": "Pass"
+        },
+        {
+          "seat_no": "149304",
+          "student_name": "",
+          "father_name": "",
+          "marks": 708,
+          "grade": "B",
+          "status": "Pass"
+        },
+        {
+          "seat_no": "149305",
+          "student_name": "",
+          "father_name": "",
+          "marks": 714,
+          "grade": "B",
+          "status": "Pass"
+        },
+        {
+          "seat_no": "149306",
+          "student_name": "",
+          "father_name": "",
+          "marks": 861,
+          "grade": "A",
+          "status": "Pass"
+        },
+        {
+          "seat_no": "149307",
+          "student_name": "",
+          "father_name": "",
+          "marks": 850,
+          "grade": "A",
+          "status": "Pass"
+        },
+        {
+          "seat_no": "149308",
+          "student_name": "",
+          "father_name": "",
+          "marks": 415,
+          "grade": "Fail",
+          "status": "Fail"
+        },
+        {
+          "seat_no": "149309",
+          "student_name": "",
+          "father_name": "",
+          "marks": 751,
+          "grade": "B",
+          "status": "Pass"
+        },
+        {
+          "seat_no": "149310",
+          "student_name": "",
+          "father_name": "",
+          "marks": 833,
+          "grade": "A",
+          "status": "Pass"
+        },
+        {
+          "seat_no": "149311",
+          "student_name": "",
+          "father_name": "",
+          "marks": 806,
+          "grade": "A",
+          "status": "Pass"
+        },
+        {
+          "seat_no": "149312",
+          "student_name": "",
+          "father_name": "",
+          "marks": 824,
+          "grade": "A",
+          "status": "Pass"
+        },
+        {
+          "seat_no": "149313",
+          "student_name": "",
+          "father_name": "",
+          "marks": 808,
+          "grade": "A",
+          "status": "Pass"
+        },
+        {
+          "seat_no": "149314",
+          "student_name": "",
+          "father_name": "",
+          "marks": 805,
+          "grade": "A",
+          "status": "Pass"
+        },
+        {
+          "seat_no": "149315",
+          "student_name": "",
+          "father_name": "",
+          "marks": 747,
+          "grade": "B",
+          "status": "Pass"
+        },
+        {
+          "seat_no": "149316",
+          "student_name": "",
+          "father_name": "",
+          "marks": 91,
+          "grade": "Fail",
+          "status": "Fail"
+        },
+        {
+          "seat_no": "149317",
+          "student_name": "",
+          "father_name": "",
+          "marks": 434,
+          "grade": "Fail",
+          "status": "Fail"
+        },
+        {
+          "seat_no": "149318",
+          "student_name": "",
+          "father_name": "",
+          "marks": 880,
+          "grade": "A1",
+          "status": "Pass"
+        },
+        {
+          "seat_no": "149319",
+          "student_name": "",
+          "father_name": "",
+          "marks": 762,
+          "grade": "B",
+          "status": "Pass"
+        },
+        {
+          "seat_no": "149320",
+          "student_name": "",
+          "father_name": "",
+          "marks": 758,
+          "grade": "B",
+          "status": "Pass"
+        },
+        {
+          "seat_no": "149321",
+          "student_name": "",
+          "father_name": "",
+          "marks": 800,
+          "grade": "A",
+          "status": "Pass"
+        },
+        {
+          "seat_no": "149322",
+          "student_name": "",
+          "father_name": "",
+          "marks": 371,
+          "grade": "Fail",
+          "status": "Fail"
+        },
+        {
+          "seat_no": "149323",
+          "student_name": "",
+          "father_name": "",
+          "marks": 809,
+          "grade": "A",
+          "status": "Pass"
+        },
+        {
+          "seat_no": "149324",
+          "student_name": "",
+          "father_name": "",
+          "marks": 884,
+          "grade": "A1",
+          "status": "Pass"
+        },
+        {
+          "seat_no": "149325",
+          "student_name": "",
+          "father_name": "",
+          "marks": 871,
+          "grade": "A",
+          "status": "Pass"
+        },
+        {
+          "seat_no": "149326",
+          "student_name": "",
+          "father_name": "",
+          "marks": 713,
+          "grade": "B",
+          "status": "Pass"
+        },
+        {
+          "seat_no": "149327",
+          "student_name": "",
+          "father_name": "",
+          "marks": 825,
+          "grade": "A",
+          "status": "Pass"
+        },
+        {
+          "seat_no": "149328",
+          "student_name": "",
+          "father_name": "",
+          "marks": 814,
+          "grade": "A",
+          "status": "Pass"
+        },
+        {
+          "seat_no": "149329",
+          "student_name": "",
+          "father_name": "",
+          "marks": 895,
+          "grade": "A1",
+          "status": "Pass"
+        },
+        {
+          "seat_no": "149330",
+          "student_name": "",
+          "father_name": "",
+          "marks": 847,
+          "grade": "A",
+          "status": "Pass"
+        },
+        {
+          "seat_no": "149331",
+          "student_name": "",
+          "father_name": "",
+          "marks": 857,
+          "grade": "A",
+          "status": "Pass"
+        },
+        {
+          "seat_no": "149332",
+          "student_name": "",
+          "father_name": "",
+          "marks": 873,
+          "grade": "A",
+          "status": "Pass"
+        },
+        {
+          "seat_no": "149333",
+          "student_name": "",
+          "father_name": "",
+          "marks": 853,
+          "grade": "A",
+          "status": "Pass"
+        },
+        {
+          "seat_no": "149334",
+          "student_name": "",
+          "father_name": "",
+          "marks": 753,
+          "grade": "B",
+          "status": "Pass"
+        },
+        {
+          "seat_no": "149335",
+          "student_name": "",
+          "father_name": "",
+          "marks": 850,
+          "grade": "A",
+          "status": "Pass"
+        },
+        {
+          "seat_no": "149336",
+          "student_name": "",
+          "father_name": "",
+          "marks": 839,
+          "grade": "A",
+          "status": "Pass"
+        },
+        {
+          "seat_no": "149337",
+          "student_name": "",
+          "father_name": "",
+          "marks": 801,
+          "grade": "A",
+          "status": "Pass"
+        },
+        {
+          "seat_no": "149338",
+          "student_name": "",
+          "father_name": "",
+          "marks": 870,
+          "grade": "A",
+          "status": "Pass"
+        },
+        {
+          "seat_no": "149339",
+          "student_name": "",
+          "father_name": "",
+          "marks": 778,
+          "grade": "A",
+          "status": "Pass"
+        },
+        {
+          "seat_no": "149340",
+          "student_name": "",
+          "father_name": "",
+          "marks": 821,
+          "grade": "A",
+          "status": "Pass"
+        },
+        {
+          "seat_no": "149341",
+          "student_name": "",
+          "father_name": "",
+          "marks": 867,
+          "grade": "A",
+          "status": "Pass"
+        },
+        {
+          "seat_no": "149342",
+          "student_name": "",
+          "father_name": "",
+          "marks": 752,
+          "grade": "B",
+          "status": "Pass"
+        },
+        {
+          "seat_no": "149343",
+          "student_name": "",
+          "father_name": "",
+          "marks": 757,
+          "grade": "B",
+          "status": "Pass"
+        },
+        {
+          "seat_no": "149344",
+          "student_name": "",
+          "father_name": "",
+          "marks": 887,
+          "grade": "A1",
+          "status": "Pass"
+        },
+        {
+          "seat_no": "149345",
+          "student_name": "",
+          "father_name": "",
+          "marks": 645,
+          "grade": "C",
+          "status": "Pass"
+        },
+        {
+          "seat_no": "149346",
+          "student_name": "",
+          "father_name": "",
+          "marks": 775,
+          "grade": "A",
+          "status": "Pass"
+        },
+        {
+          "seat_no": "149347",
+          "student_name": "",
+          "father_name": "",
+          "marks": 924,
+          "grade": "A1",
+          "status": "Pass"
+        },
+        {
+          "seat_no": "149348",
+          "student_name": "",
+          "father_name": "",
+          "marks": 734,
+          "grade": "B",
+          "status": "Pass"
+        },
+        {
+          "seat_no": "149349",
+          "student_name": "",
+          "father_name": "",
+          "marks": 804,
+          "grade": "A",
+          "status": "Pass"
+        },
+        {
+          "seat_no": "149350",
+          "student_name": "",
+          "father_name": "",
+          "marks": 833,
+          "grade": "A",
+          "status": "Pass"
+        },
+        {
+          "seat_no": "149351",
+          "student_name": "",
+          "father_name": "",
+          "marks": 893,
+          "grade": "A1",
+          "status": "Pass"
+        },
+        {
+          "seat_no": "149352",
+          "student_name": "",
+          "father_name": "",
+          "marks": 126,
+          "grade": "Fail",
+          "status": "Fail"
+        },
+        {
+          "seat_no": "149353",
+          "student_name": "",
+          "father_name": "",
+          "marks": 754,
+          "grade": "B",
+          "status": "Pass"
+        },
+        {
+          "seat_no": "149354",
+          "student_name": "",
+          "father_name": "",
+          "marks": 844,
+          "grade": "A",
+          "status": "Pass"
+        },
+        {
+          "seat_no": "149355",
+          "student_name": "",
+          "father_name": "",
+          "marks": 845,
+          "grade": "A",
+          "status": "Pass"
+        },
+        {
+          "seat_no": "149356",
+          "student_name": "",
+          "father_name": "",
+          "marks": 735,
+          "grade": "B",
+          "status": "Pass"
+        },
+        {
+          "seat_no": "149357",
+          "student_name": "",
+          "father_name": "",
+          "marks": 744,
+          "grade": "B",
+          "status": "Pass"
+        },
+        {
+          "seat_no": "149358",
+          "student_name": "",
+          "father_name": "",
+          "marks": 739,
+          "grade": "B",
+          "status": "Pass"
+        },
+        {
+          "seat_no": "149359",
+          "student_name": "",
+          "father_name": "",
+          "marks": 814,
+          "grade": "A",
+          "status": "Pass"
+        },
+        {
+          "seat_no": "149360",
+          "student_name": "",
+          "father_name": "",
+          "marks": 771,
+          "grade": "A",
+          "status": "Pass"
+        },
+        {
+          "seat_no": "149361",
+          "student_name": "",
+          "father_name": "",
+          "marks": 826,
+          "grade": "A",
+          "status": "Pass"
+        },
+        {
+          "seat_no": "149362",
+          "student_name": "",
+          "father_name": "",
+          "marks": 822,
+          "grade": "A",
+          "status": "Pass"
+        },
+        {
+          "seat_no": "149363",
+          "student_name": "",
+          "father_name": "",
+          "marks": 867,
+          "grade": "A",
+          "status": "Pass"
+        },
+        {
+          "seat_no": "149364",
+          "student_name": "",
+          "father_name": "",
+          "marks": 864,
+          "grade": "A",
+          "status": "Pass"
+        },
+        {
+          "seat_no": "149365",
+          "student_name": "",
+          "father_name": "",
+          "marks": 752,
+          "grade": "B",
+          "status": "Pass"
+        },
+        {
+          "seat_no": "149366",
+          "student_name": "",
+          "father_name": "",
+          "marks": 748,
+          "grade": "B",
+          "status": "Pass"
+        },
+        {
+          "seat_no": "149367",
+          "student_name": "",
+          "father_name": "",
+          "marks": 815,
+          "grade": "A",
+          "status": "Pass"
+        },
+        {
+          "seat_no": "149368",
+          "student_name": "",
+          "father_name": "",
+          "marks": 905,
+          "grade": "A1",
+          "status": "Pass"
+        },
+        {
+          "seat_no": "149369",
+          "student_name": "",
+          "father_name": "",
+          "marks": 695,
+          "grade": "B",
+          "status": "Pass"
+        },
+        {
+          "seat_no": "149370",
+          "student_name": "",
+          "father_name": "",
+          "marks": 757,
+          "grade": "B",
+          "status": "Pass"
+        },
+        {
+          "seat_no": "149371",
+          "student_name": "",
+          "father_name": "",
+          "marks": 826,
+          "grade": "A",
+          "status": "Pass"
+        },
+        {
+          "seat_no": "149372",
+          "student_name": "",
+          "father_name": "",
+          "marks": 864,
+          "grade": "A",
+          "status": "Pass"
+        },
+        {
+          "seat_no": "149373",
+          "student_name": "",
+          "father_name": "",
+          "marks": 825,
+          "grade": "A",
+          "status": "Pass"
+        },
+        {
+          "seat_no": "149374",
+          "student_name": "",
+          "father_name": "",
+          "marks": 880,
+          "grade": "A1",
+          "status": "Pass"
+        },
+        {
+          "seat_no": "149375",
+          "student_name": "",
+          "father_name": "",
+          "marks": 814,
+          "grade": "A",
+          "status": "Pass"
+        },
+        {
+          "seat_no": "149376",
+          "student_name": "",
+          "father_name": "",
+          "marks": 787,
+          "grade": "A",
+          "status": "Pass"
+        },
+        {
+          "seat_no": "149377",
+          "student_name": "",
+          "father_name": "",
+          "marks": 770,
+          "grade": "A",
+          "status": "Pass"
+        },
+        {
+          "seat_no": "149378",
+          "student_name": "",
+          "father_name": "",
+          "marks": 874,
+          "grade": "A",
+          "status": "Pass"
+        },
+        {
+          "seat_no": "149379",
+          "student_name": "",
+          "father_name": "",
+          "marks": 863,
+          "grade": "A",
+          "status": "Pass"
+        },
+        {
+          "seat_no": "149380",
+          "student_name": "",
+          "father_name": "",
+          "marks": 870,
+          "grade": "A",
+          "status": "Pass"
+        },
+        {
+          "seat_no": "149381",
+          "student_name": "",
+          "father_name": "",
+          "marks": 850,
+          "grade": "A",
+          "status": "Pass"
+        },
+        {
+          "seat_no": "149382",
+          "student_name": "",
+          "father_name": "",
+          "marks": 820,
+          "grade": "A",
+          "status": "Pass"
+        },
+        {
+          "seat_no": "149383",
+          "student_name": "",
+          "father_name": "",
+          "marks": 755,
+          "grade": "B",
+          "status": "Pass"
+        },
+        {
+          "seat_no": "149384",
+          "student_name": "",
+          "father_name": "",
+          "marks": 812,
+          "grade": "A",
+          "status": "Pass"
+        },
+        {
+          "seat_no": "149385",
+          "student_name": "",
+          "father_name": "",
+          "marks": 869,
+          "grade": "A",
+          "status": "Pass"
+        },
+        {
+          "seat_no": "149386",
+          "student_name": "",
+          "father_name": "",
+          "marks": 825,
+          "grade": "A",
+          "status": "Pass"
+        },
+        {
+          "seat_no": "149387",
+          "student_name": "",
+          "father_name": "",
+          "marks": 845,
+          "grade": "A",
+          "status": "Pass"
+        },
+        {
+          "seat_no": "149388",
+          "student_name": "",
+          "father_name": "",
+          "marks": 788,
+          "grade": "A",
+          "status": "Pass"
+        },
+        {
+          "seat_no": "149389",
+          "student_name": "",
+          "father_name": "",
+          "marks": 837,
+          "grade": "A",
+          "status": "Pass"
+        },
+        {
+          "seat_no": "149390",
+          "student_name": "",
+          "father_name": "",
+          "marks": 871,
+          "grade": "A",
+          "status": "Pass"
+        },
+        {
+          "seat_no": "149391",
+          "student_name": "",
+          "father_name": "",
+          "marks": 830,
+          "grade": "A",
+          "status": "Pass"
+        },
+        {
+          "seat_no": "149392",
+          "student_name": "",
+          "father_name": "",
+          "marks": 772,
+          "grade": "A",
+          "status": "Pass"
+        },
+        {
+          "seat_no": "149393",
+          "student_name": "",
+          "father_name": "",
+          "marks": 776,
+          "grade": "A",
+          "status": "Pass"
+        },
+        {
+          "seat_no": "149394",
+          "student_name": "",
+          "father_name": "",
+          "marks": 755,
+          "grade": "B",
+          "status": "Pass"
+        },
+        {
+          "seat_no": "187519",
+          "student_name": "",
+          "father_name": "",
+          "marks": 715,
+          "grade": "B",
+          "status": "Pass"
+        },
+        {
+          "seat_no": "187520",
+          "student_name": "",
+          "father_name": "",
+          "marks": 647,
+          "grade": "C",
+          "status": "Pass"
+        }
+      ]
+    }
+  ],
+  "documents": []
+}

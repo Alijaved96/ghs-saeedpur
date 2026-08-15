@@ -1,0 +1,25 @@
+{
+  "items": [
+    {
+      "title": "Classroom Learning",
+      "date": "2026-08-15",
+      "image": "/assets/images/classroom.jpg",
+      "caption": "Classroom learning and student engagement",
+      "published": true
+    },
+    {
+      "title": "Morning Assembly",
+      "date": "2026-08-15",
+      "image": "/assets/images/assembly-1.jpg",
+      "caption": "Morning assembly at Government High School (Campus) Saeedpur",
+      "published": true
+    },
+    {
+      "title": "School Assembly",
+      "date": "2026-08-15",
+      "image": "/assets/images/assembly-2.jpg",
+      "caption": "Discipline, participation and community",
+      "published": true
+    }
+  ]
+}
