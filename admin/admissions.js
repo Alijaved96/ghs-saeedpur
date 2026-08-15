@@ -94,7 +94,7 @@
     const status = statusFilter.value;
     return applications.filter(app => {
       const d = app.data || {};
-      const haystack = [d.student_name,d.guardian_name,d.mobile,d.class_applying,d.previous_school,d.address].join(' ').toLowerCase();
+      const haystack = [d.student_name,d.student_surname,d.guardian_name,d.mobile,d.class_applying,d.previous_school,d.student_bform_number,d.father_cnic_number].join(' ').toLowerCase();
       return (!q || haystack.includes(q)) && (status === 'All' || app.status === status);
     });
   }
@@ -104,7 +104,7 @@
     recordsBody.innerHTML = rows.map(app => {
       const d = app.data || {};
       return `<tr>
-        <td><span class="student-name">${escapeHtml(d.student_name || '—')}</span><br><span class="muted">${escapeHtml(d.gender || '')}</span></td>
+        <td><span class="student-name">${escapeHtml(d.student_name || '—')}</span><br><span class="muted">Surname: ${escapeHtml(d.student_surname || '—')}</span></td>
         <td>${escapeHtml(d.guardian_name || '—')}</td>
         <td>${escapeHtml(d.class_applying || '—')}</td>
         <td>${escapeHtml(d.mobile || '—')}</td>
@@ -147,19 +147,17 @@
     selectedId = id;
     const d = app.data || {};
     detailGrid.innerHTML = [
-      detailItem('Student Full Name', d.student_name),
-      detailItem('Father / Guardian Name', d.guardian_name),
-      detailItem('Date of Birth', d.date_of_birth),
-      detailItem('Gender', d.gender),
+      detailItem("Student's Full Name", d.student_name),
+      detailItem("Father's Full Name", d.guardian_name),
+      detailItem('Surname', d.student_surname),
       detailItem('Class Applying For', d.class_applying),
-      detailItem('Last Class Attended', d.last_class),
-      detailItem('Mobile Number', d.mobile),
-      detailItem('Previous School', d.previous_school),
-      detailItem('Residential Address', d.address, true),
-      detailItem('Additional Information', d.message, true),
-      fileDetailItem('Student B-Form / CRC', d.student_bform),
-      fileDetailItem('Father / Guardian CNIC', d.father_cnic),
-      fileDetailItem('Student Photograph', d.student_photo, true),
+      detailItem('Last School Attended', d.previous_school),
+      detailItem('Date of Birth', d.date_of_birth),
+      detailItem('Student B-Form / CRC Number', d.student_bform_number),
+      detailItem("Father's CNIC Number", d.father_cnic_number),
+      detailItem('Phone Number', d.mobile),
+      fileDetailItem('Student Photograph (Optional)', d.student_photo, true),
+      fileDetailItem('Student B-Form / CRC Copy (Optional)', d.student_bform),
       detailItem('Declaration', d.declaration),
       detailItem('Submitted', prettyDate(app.created_at)),
       detailItem('Current Status', app.status || 'Pending'),
@@ -204,19 +202,17 @@
       `Submitted: ${prettyDate(app.created_at)}`,
       `Status: ${app.status || 'Pending'}`,
       '',
-      `Student Full Name: ${d.student_name || ''}`,
-      `Father / Guardian Name: ${d.guardian_name || ''}`,
-      `Date of Birth: ${d.date_of_birth || ''}`,
-      `Gender: ${d.gender || ''}`,
+      `Student's Full Name: ${d.student_name || ''}`,
+      `Father's Full Name: ${d.guardian_name || ''}`,
+      `Surname: ${d.student_surname || ''}`,
       `Class Applying For: ${d.class_applying || ''}`,
-      `Last Class Attended: ${d.last_class || ''}`,
-      `Mobile Number: ${d.mobile || ''}`,
-      `Previous School: ${d.previous_school || ''}`,
-      `Residential Address: ${d.address || ''}`,
-      `Additional Information: ${d.message || ''}`,
-      `Student B-Form / CRC: ${d.student_bform || ''}`,
-      `Father / Guardian CNIC: ${d.father_cnic || ''}`,
-      `Student Photograph: ${d.student_photo || ''}`,
+      `Last School Attended: ${d.previous_school || ''}`,
+      `Date of Birth: ${d.date_of_birth || ''}`,
+      `Student B-Form / CRC Number: ${d.student_bform_number || ''}`,
+      `Father's CNIC Number: ${d.father_cnic_number || ''}`,
+      `Phone Number: ${d.mobile || ''}`,
+      `Student Photograph (Optional): ${d.student_photo || ''}`,
+      `Student B-Form / CRC Copy (Optional): ${d.student_bform || ''}`,
       `Declaration: ${d.declaration || ''}`,
       '',
       'Government High School (Campus) Saeedpur',
@@ -237,10 +233,10 @@
   function exportCsv() {
     const rows = filteredApplications();
     if (!rows.length) return alert('No records to export.');
-    const headers = ['Application ID','Submitted','Status','Student Name','Guardian Name','Date of Birth','Gender','Class Applying','Last Class','Mobile','Previous School','Address','Additional Information','Student B-Form / CRC','Father / Guardian CNIC','Student Photograph','Declaration'];
+    const headers = ["Application ID","Submitted","Status","Student's Full Name","Father's Full Name","Surname","Class Applying For","Last School Attended","Date of Birth","Student B-Form / CRC Number","Father\'s CNIC Number","Phone Number","Student Photograph (Optional)","Student B-Form / CRC Copy (Optional)","Declaration"];
     const values = rows.map(app => {
       const d = app.data || {};
-      return [app.id,app.created_at,app.status,d.student_name,d.guardian_name,d.date_of_birth,d.gender,d.class_applying,d.last_class,d.mobile,d.previous_school,d.address,d.message,d.student_bform,d.father_cnic,d.student_photo,d.declaration];
+      return [app.id,app.created_at,app.status,d.student_name,d.guardian_name,d.student_surname,d.class_applying,d.previous_school,d.date_of_birth,d.student_bform_number,d.father_cnic_number,d.mobile,d.student_photo,d.student_bform,d.declaration];
     });
     const csv = [headers, ...values].map(row => row.map(value => `"${String(value ?? '').replace(/"/g,'""')}"`).join(',')).join('\r\n');
     const blob = new Blob([csv], {type:'text/csv;charset=utf-8'});
