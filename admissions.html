@@ -114,11 +114,11 @@
           <div><span>✓</span><p><strong>Step 2:</strong> School administration reviews the details.</p></div>
           <div><span>✓</span><p><strong>Step 3:</strong> Parent/guardian is contacted for document verification and further guidance.</p></div>
         </div>
-        <div class="privacy-note">For privacy and security, document scans are not requested through this online form. Required documents can be verified at the school office.</div>
+        <div class="privacy-note"><strong>Required online uploads:</strong> Student B-Form/CRC, Father/Guardian CNIC and one recent student photograph. These documents contain personal information and will be used only for admission processing and verification. Originals may still be requested by the school office.</div>
       </div>
 
       <div class="admission-form-card">
-        <form name="admission-enquiry" method="POST" action="admission-success.html" data-netlify="true" data-netlify-honeypot="bot-field">
+        <form id="admissionEnquiryForm" name="admission-enquiry" method="POST" action="admission-success.html" enctype="multipart/form-data" data-netlify="true" data-netlify-honeypot="bot-field">
           <input type="hidden" name="form-name" value="admission-enquiry">
           <p class="hidden-field"><label>Do not fill this out: <input name="bot-field"></label></p>
 
@@ -141,6 +141,15 @@
             <label>Residential Address <span>*</span><textarea class="input textarea" name="address" rows="4" required></textarea></label>
             <label>Additional Information<textarea class="input textarea" name="message" rows="4" placeholder="Any information the school should know (optional)"></textarea></label>
           </div>
+
+          <div class="form-section-title">Required Document Uploads</div>
+          <div class="upload-guidance">All three uploads are compulsory. Use clear JPG/PNG images or PDF documents. Keep the combined upload size below 8 MB.</div>
+          <div class="admission-fields">
+            <label>Student B-Form / CRC <span>*</span><input class="input file-input" type="file" name="student_bform" accept="image/jpeg,image/png,application/pdf" required><small>Upload a clear image or PDF of the student's B-Form / CRC.</small></label>
+            <label>Father / Guardian CNIC <span>*</span><input class="input file-input" type="file" name="father_cnic" accept="image/jpeg,image/png,application/pdf" required><small>Upload a clear image or PDF. If both sides are needed, use one combined image/PDF.</small></label>
+            <label>Recent Student Photograph <span>*</span><input class="input file-input" type="file" name="student_photo" accept="image/jpeg,image/png" required><small>Upload a recent passport-style JPG or PNG photograph.</small></label>
+          </div>
+          <div id="uploadSizeError" class="upload-error" role="alert" hidden></div>
 
           <label class="declaration-check"><input type="checkbox" name="declaration" value="Agreed" required><span>I confirm that the information provided above is correct to the best of my knowledge and understand that final admission is subject to school verification and policy.</span></label>
 
@@ -173,6 +182,27 @@
     </div>
     <div class="container footer-bottom"><span>© <span data-current-year></span> Government High School (Campus) Saeedpur. All rights reserved.</span><span>SEMIS 401050302 • Established 1952</span></div>
   </footer>
+  <script>
+    (function(){
+      const form=document.getElementById('admissionEnquiryForm');
+      const errorBox=document.getElementById('uploadSizeError');
+      if(!form||!errorBox) return;
+      form.addEventListener('submit',function(event){
+        const files=[...form.querySelectorAll('input[type="file"]')].flatMap(input=>[...input.files]);
+        const total=files.reduce((sum,file)=>sum+file.size,0);
+        const limit=7.5*1024*1024;
+        if(total>limit){
+          event.preventDefault();
+          errorBox.hidden=false;
+          errorBox.textContent='Combined upload size is too large. Please keep all uploaded files below 7.5 MB in total and try again.';
+          errorBox.scrollIntoView({behavior:'smooth',block:'center'});
+        }else{
+          errorBox.hidden=true;
+          errorBox.textContent='';
+        }
+      });
+    })();
+  </script>
   <script src="assets/js/main.js"></script>
   <script src="assets/js/content.js"></script>
 </body>
