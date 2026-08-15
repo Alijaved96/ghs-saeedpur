@@ -157,3 +157,10 @@ select.input{background:#fff}.hidden-field{position:absolute!important;left:-999
 .success-mark{width:74px;height:74px;border-radius:50%;margin:0 auto 18px;display:grid;place-items:center;background:#e9f8ef;color:#16643b;font-size:36px;font-weight:900;border:6px solid #f6fcf8}.success-card h1{margin:0 0 14px;color:var(--navy);font-size:clamp(32px,5vw,50px);line-height:1.05}.success-card>p{color:var(--muted);font-size:17px}.success-card .callout{text-align:left;margin:24px 0}.success-card .actions{justify-content:center}
 @media(max-width:860px){.admission-form-layout{grid-template-columns:1fr}.admission-form-copy{position:static}.document-grid{grid-template-columns:1fr}}
 @media(max-width:620px){.ticker-track{animation-duration:22s}.ticker-track span{padding:7px 34px 7px 0}.admission-form-card{padding:21px}.admission-fields.two-cols{grid-template-columns:1fr}.document-card{padding:18px}.success-card{padding:30px 20px}.success-page{padding:55px 0}}
+
+/* Required admission document uploads */
+.upload-guidance{margin:-2px 0 16px;padding:13px 15px;border:1px solid #d8e3f4;border-radius:13px;background:#f7faff;color:#40516d;font-size:13px;line-height:1.5}
+.file-input{height:auto;min-height:54px;padding:9px 11px;background:#fbfcfe;color:#273750}
+.file-input::file-selector-button{border:0;border-radius:9px;padding:9px 12px;margin-right:10px;background:var(--navy);color:#fff;font-weight:800;cursor:pointer}
+.admission-fields label small{font-weight:500;color:var(--muted);line-height:1.45}
+.upload-error{margin-top:14px;padding:13px 15px;border-radius:12px;background:#fff0f0;border:1px solid #f3c7c7;color:#a61b1b;font-size:13px;font-weight:700}
