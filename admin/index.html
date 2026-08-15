@@ -1,8 +1,90 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>School Admin | GHS Campus Saeedpur</title>
-<link rel="icon" href="/assets/images/logo.jpg">
-<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-</head><body>
-<script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
-</body></html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>School Admin | GHS Campus Saeedpur</title>
+  <link rel="icon" href="/assets/images/logo.jpg">
+  <link rel="stylesheet" href="admin.css">
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+</head>
+<body class="admin-bg">
+  <main class="admin-shell">
+    <header class="admin-header">
+      <div class="admin-brand">
+        <img src="/assets/images/logo.jpg" alt="Government High School Campus Saeedpur logo">
+        <div>
+          <span class="admin-kicker">Secure School Administration</span>
+          <h1>GHS Campus Saeedpur Admin Panel</h1>
+          <p>Manage website content and admission applications from one place.</p>
+        </div>
+      </div>
+      <div class="admin-userbox">
+        <span id="authState" class="auth-state">Checking login…</span>
+        <button id="loginBtn" class="admin-btn primary" type="button">Admin Login</button>
+        <button id="logoutBtn" class="admin-btn ghost" type="button" hidden>Logout</button>
+      </div>
+    </header>
+
+    <section class="admin-grid" aria-label="Admin tools">
+      <a class="admin-card protected-link" href="cms.html" data-protected="true">
+        <div class="admin-card-icon">✎</div>
+        <div>
+          <span class="card-label">Website CMS</span>
+          <h2>Website Content</h2>
+          <p>Manage school settings, notices, results, gallery, achievements, downloads and staff.</p>
+        </div>
+        <span class="card-arrow">→</span>
+      </a>
+
+      <a class="admin-card protected-link featured" href="admissions.html" data-protected="true">
+        <div class="admin-card-icon">▦</div>
+        <div>
+          <span class="card-label">Admissions</span>
+          <h2>Admission Applications</h2>
+          <p>View submitted applications, search records, change status, print details and export CSV.</p>
+        </div>
+        <span class="card-arrow">→</span>
+      </a>
+    </section>
+
+    <section class="admin-info">
+      <strong>Privacy:</strong> Admission records are available only after an administrator signs in with Netlify Identity. Keep Identity registration set to <strong>Invite only</strong>.
+    </section>
+  </main>
+
+  <script>
+    (() => {
+      const identity = window.netlifyIdentity;
+      const state = document.getElementById('authState');
+      const loginBtn = document.getElementById('loginBtn');
+      const logoutBtn = document.getElementById('logoutBtn');
+      const protectedLinks = document.querySelectorAll('[data-protected="true"]');
+
+      function render(user) {
+        const loggedIn = Boolean(user);
+        state.textContent = loggedIn ? `Signed in: ${user.email || 'Administrator'}` : 'Not signed in';
+        loginBtn.hidden = loggedIn;
+        logoutBtn.hidden = !loggedIn;
+        protectedLinks.forEach(link => link.classList.toggle('locked', !loggedIn));
+      }
+
+      loginBtn.addEventListener('click', () => identity.open('login'));
+      logoutBtn.addEventListener('click', () => identity.logout());
+      protectedLinks.forEach(link => {
+        link.addEventListener('click', event => {
+          if (!identity.currentUser()) {
+            event.preventDefault();
+            identity.open('login');
+          }
+        });
+      });
+
+      identity.on('init', render);
+      identity.on('login', user => { render(user); identity.close(); });
+      identity.on('logout', () => render(null));
+      setTimeout(() => render(identity.currentUser()), 250);
+    })();
+  </script>
+</body>
+</html>

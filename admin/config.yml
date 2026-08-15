@@ -2,10 +2,10 @@ backend:
   name: git-gateway
   branch: main
 
-site_url: https://ghs-campus-saeedpur.netlify.app
-display_url: https://ghs-campus-saeedpur.netlify.app
+site_url: https://ghs-saeedpur.netlify.app
+display_url: https://ghs-saeedpur.netlify.app
 logo:
-  src: https://ghs-campus-saeedpur.netlify.app/assets/images/logo.jpg
+  src: https://ghs-saeedpur.netlify.app/assets/images/logo.jpg
   show_in_header: true
 media_folder: "assets/uploads"
 public_folder: "/assets/uploads"
