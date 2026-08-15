@@ -106,15 +106,15 @@
   <section class="section" id="admission-form">
     <div class="container admission-form-layout">
       <div class="admission-form-copy">
-        <div class="kicker">Online Admission Request</div>
-        <h2>Submit Student Details</h2>
-        <p>Complete this form to send an initial admission request to the school. Submission of this form does not itself guarantee admission.</p>
+        <div class="kicker">Online Admission Application Form</div>
+        <h2>Complete the Admission Application</h2>
+        <p>Please complete the application form carefully and provide accurate information. Submission of this form is an initial application and does not guarantee admission.</p>
         <div class="admission-points">
           <div><span>✓</span><p><strong>Step 1:</strong> Submit the online request.</p></div>
           <div><span>✓</span><p><strong>Step 2:</strong> School administration reviews the details.</p></div>
           <div><span>✓</span><p><strong>Step 3:</strong> Parent/guardian is contacted for document verification and further guidance.</p></div>
         </div>
-        <div class="privacy-note"><strong>Required online uploads:</strong> Student B-Form/CRC, Father/Guardian CNIC and one recent student photograph. These documents contain personal information and will be used only for admission processing and verification. Originals may still be requested by the school office.</div>
+        <div class="privacy-note"><strong>Optional online attachments:</strong> You may attach a recent student photograph and a clear copy of the student's B-Form/CRC. These uploads are optional and are used only to assist admission processing. The school may still require original documents or photocopies for verification.</div>
       </div>
 
       <div class="admission-form-card">
@@ -124,37 +124,29 @@
 
           <div class="form-section-title">Student Information</div>
           <div class="admission-fields two-cols">
-            <label>Student Full Name <span>*</span><input class="input" type="text" name="student_name" autocomplete="name" required></label>
-            <label>Father / Guardian Name <span>*</span><input class="input" type="text" name="guardian_name" required></label>
+            <label>Student's Full Name <span>*</span><input class="input" type="text" name="student_name" autocomplete="name" required></label>
+            <label>Father's Full Name <span>*</span><input class="input" type="text" name="guardian_name" required></label>
+            <label>Surname <span>*</span><input class="input" type="text" name="student_surname" autocomplete="family-name" required></label>
+            <label>Class Applying For <span>*</span><select class="input" name="class_applying" required><option value="">Select a Class</option><option>ECE/KG</option><option>Class I</option><option>Class II</option><option>Class III</option><option>Class IV</option><option>Class V</option><option>Class VI</option><option>Class VII</option><option>Class VIII</option><option>Class IX</option><option>Class X</option></select></label>
+            <label>Last School Attended <span>*</span><input class="input" type="text" name="previous_school" placeholder="Enter N/A if not applicable" required></label>
             <label>Date of Birth <span>*</span><input class="input" type="date" name="date_of_birth" required></label>
-            <label>Gender <span>*</span><select class="input" name="gender" required><option value="">Select</option><option>Male</option><option>Female</option></select></label>
-            <label>Class Applying For <span>*</span><select class="input" name="class_applying" required><option value="">Select Class</option><option>ECE/KG</option><option>Class I</option><option>Class II</option><option>Class III</option><option>Class IV</option><option>Class V</option><option>Class VI</option><option>Class VII</option><option>Class VIII</option><option>Class IX</option><option>Class X</option></select></label>
-            <label>Last Class Attended<input class="input" type="text" name="last_class" placeholder="If applicable"></label>
+            <label>Student B-Form / CRC Number <span>*</span><input class="input" type="text" name="student_bform_number" inputmode="numeric" maxlength="15" placeholder="XXXXX-XXXXXXX-X" pattern="[0-9]{5}-?[0-9]{7}-?[0-9]" title="Enter a valid 13-digit B-Form/CRC number" required><small>Enter the 13-digit B-Form/CRC number. Hyphens are optional.</small></label>
+            <label>Father's CNIC Number <span>*</span><input class="input" type="text" name="father_cnic_number" inputmode="numeric" maxlength="15" placeholder="XXXXX-XXXXXXX-X" pattern="[0-9]{5}-?[0-9]{7}-?[0-9]" title="Enter a valid 13-digit CNIC number" required><small>Enter the 13-digit CNIC number. Hyphens are optional.</small></label>
+            <label>Phone Number <span>*</span><input class="input" type="tel" name="mobile" inputmode="tel" maxlength="12" placeholder="03XX-XXXXXXX" pattern="03[0-9]{2}-?[0-9]{7}" title="Enter a valid Pakistani mobile number, for example 0301-1234567" required></label>
           </div>
 
-          <div class="form-section-title">Parent / Guardian Contact</div>
+          <div class="form-section-title">Optional Supporting Documents</div>
+          <div class="upload-guidance">The following attachments are optional. If you choose to upload them, please use a clear JPG or PNG image for the student photograph and a clear JPG, PNG, or PDF copy of the B-Form/CRC. Keep the combined upload size below 7.5 MB.</div>
           <div class="admission-fields two-cols">
-            <label>Mobile Number <span>*</span><input class="input" type="tel" name="mobile" inputmode="tel" placeholder="03XX-XXXXXXX" required></label>
-            <label>Previous School<input class="input" type="text" name="previous_school" placeholder="If applicable"></label>
-          </div>
-          <div class="admission-fields">
-            <label>Residential Address <span>*</span><textarea class="input textarea" name="address" rows="4" required></textarea></label>
-            <label>Additional Information<textarea class="input textarea" name="message" rows="4" placeholder="Any information the school should know (optional)"></textarea></label>
-          </div>
-
-          <div class="form-section-title">Required Document Uploads</div>
-          <div class="upload-guidance">All three uploads are compulsory. Use clear JPG/PNG images or PDF documents. Keep the combined upload size below 8 MB.</div>
-          <div class="admission-fields">
-            <label>Student B-Form / CRC <span>*</span><input class="input file-input" type="file" name="student_bform" accept="image/jpeg,image/png,application/pdf" required><small>Upload a clear image or PDF of the student's B-Form / CRC.</small></label>
-            <label>Father / Guardian CNIC <span>*</span><input class="input file-input" type="file" name="father_cnic" accept="image/jpeg,image/png,application/pdf" required><small>Upload a clear image or PDF. If both sides are needed, use one combined image/PDF.</small></label>
-            <label>Recent Student Photograph <span>*</span><input class="input file-input" type="file" name="student_photo" accept="image/jpeg,image/png" required><small>Upload a recent passport-style JPG or PNG photograph.</small></label>
+            <label>Student Photograph <small>(Optional)</small><input class="input file-input" type="file" name="student_photo" accept="image/jpeg,image/png"><small>Optional: upload a recent passport-style JPG or PNG photograph.</small></label>
+            <label>Student B-Form / CRC Copy <small>(Optional)</small><input class="input file-input" type="file" name="student_bform" accept="image/jpeg,image/png,application/pdf"><small>Optional: upload a clear image or PDF copy of the student's B-Form / CRC.</small></label>
           </div>
           <div id="uploadSizeError" class="upload-error" role="alert" hidden></div>
 
-          <label class="declaration-check"><input type="checkbox" name="declaration" value="Agreed" required><span>I confirm that the information provided above is correct to the best of my knowledge and understand that final admission is subject to school verification and policy.</span></label>
+          <label class="declaration-check"><input type="checkbox" name="declaration" value="Agreed" required><span>I confirm that the information provided above is accurate to the best of my knowledge. I understand that final admission is subject to verification of documents, class availability, and school policy.</span></label>
 
-          <button class="btn btn-primary admission-submit" type="submit">Submit Admission Request →</button>
-          <p class="form-help">Fields marked with * are required.</p>
+          <button class="btn btn-primary admission-submit" type="submit">Submit Application →</button>
+          <p class="form-help">Fields marked with an asterisk (*) are required.</p>
         </form>
       </div>
     </div>
