@@ -123,6 +123,24 @@
     return `<div class="detail-item${wide ? ' wide' : ''}"><span>${escapeHtml(label)}</span><strong>${escapeHtml(value || '—')}</strong></div>`;
   }
 
+  function safeFileUrl(value) {
+    if (!value) return null;
+    try {
+      const url = new URL(String(value), window.location.origin);
+      return ['http:', 'https:'].includes(url.protocol) ? url.href : null;
+    } catch {
+      return null;
+    }
+  }
+
+  function fileDetailItem(label, value, imagePreview = false) {
+    const href = safeFileUrl(value);
+    if (!value) return detailItem(label, 'Not available');
+    if (!href) return detailItem(label, value);
+    const preview = imagePreview ? `<img src="${escapeHtml(href)}" alt="${escapeHtml(label)}" style="display:block;width:110px;height:135px;object-fit:cover;border-radius:10px;margin:8px 0;border:1px solid #dce3ef">` : '';
+    return `<div class="detail-item wide"><span>${escapeHtml(label)}</span>${preview}<strong><a href="${escapeHtml(href)}" target="_blank" rel="noopener">Open uploaded file ↗</a></strong></div>`;
+  }
+
   function openDetails(id, printAfter = false) {
     const app = applications.find(a => a.id === id);
     if (!app) return;
@@ -139,6 +157,9 @@
       detailItem('Previous School', d.previous_school),
       detailItem('Residential Address', d.address, true),
       detailItem('Additional Information', d.message, true),
+      fileDetailItem('Student B-Form / CRC', d.student_bform),
+      fileDetailItem('Father / Guardian CNIC', d.father_cnic),
+      fileDetailItem('Student Photograph', d.student_photo, true),
       detailItem('Declaration', d.declaration),
       detailItem('Submitted', prettyDate(app.created_at)),
       detailItem('Current Status', app.status || 'Pending'),
@@ -193,6 +214,9 @@
       `Previous School: ${d.previous_school || ''}`,
       `Residential Address: ${d.address || ''}`,
       `Additional Information: ${d.message || ''}`,
+      `Student B-Form / CRC: ${d.student_bform || ''}`,
+      `Father / Guardian CNIC: ${d.father_cnic || ''}`,
+      `Student Photograph: ${d.student_photo || ''}`,
       `Declaration: ${d.declaration || ''}`,
       '',
       'Government High School (Campus) Saeedpur',
@@ -213,10 +237,10 @@
   function exportCsv() {
     const rows = filteredApplications();
     if (!rows.length) return alert('No records to export.');
-    const headers = ['Application ID','Submitted','Status','Student Name','Guardian Name','Date of Birth','Gender','Class Applying','Last Class','Mobile','Previous School','Address','Additional Information','Declaration'];
+    const headers = ['Application ID','Submitted','Status','Student Name','Guardian Name','Date of Birth','Gender','Class Applying','Last Class','Mobile','Previous School','Address','Additional Information','Student B-Form / CRC','Father / Guardian CNIC','Student Photograph','Declaration'];
     const values = rows.map(app => {
       const d = app.data || {};
-      return [app.id,app.created_at,app.status,d.student_name,d.guardian_name,d.date_of_birth,d.gender,d.class_applying,d.last_class,d.mobile,d.previous_school,d.address,d.message,d.declaration];
+      return [app.id,app.created_at,app.status,d.student_name,d.guardian_name,d.date_of_birth,d.gender,d.class_applying,d.last_class,d.mobile,d.previous_school,d.address,d.message,d.student_bform,d.father_cnic,d.student_photo,d.declaration];
     });
     const csv = [headers, ...values].map(row => row.map(value => `"${String(value ?? '').replace(/"/g,'""')}"`).join(',')).join('\r\n');
     const blob = new Blob([csv], {type:'text/csv;charset=utf-8'});
