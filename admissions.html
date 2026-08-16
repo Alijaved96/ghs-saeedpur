@@ -175,26 +175,109 @@
     <div class="container footer-bottom"><span>© <span data-current-year></span> Government High School (Campus) Saeedpur. All rights reserved.</span><span>SEMIS 401050302 • Established 1952</span></div>
   </footer>
   <script>
-    (function(){
-      const form=document.getElementById('admissionEnquiryForm');
-      const errorBox=document.getElementById('uploadSizeError');
-      if(!form||!errorBox) return;
-      form.addEventListener('submit',function(event){
-        const files=[...form.querySelectorAll('input[type="file"]')].flatMap(input=>[...input.files]);
-        const total=files.reduce((sum,file)=>sum+file.size,0);
-        const limit=7.5*1024*1024;
-        if(total>limit){
-          event.preventDefault();
-          errorBox.hidden=false;
-          errorBox.textContent='Combined upload size is too large. Please keep all uploaded files below 7.5 MB in total and try again.';
-          errorBox.scrollIntoView({behavior:'smooth',block:'center'});
-        }else{
-          errorBox.hidden=true;
-          errorBox.textContent='';
-        }
+(function () {
+  const form = document.getElementById('admissionEnquiryForm');
+  const errorBox = document.getElementById('uploadSizeError');
+
+  if (!form || !errorBox) return;
+
+  function fileToPayload(file) {
+    if (!file) return Promise.resolve(null);
+
+    return new Promise((resolve, reject) => {
+      const reader = new FileReader();
+
+      reader.onload = () => resolve({
+        name: file.name,
+        type: file.type,
+        size: file.size,
+        data: reader.result
       });
-    })();
-  </script>
+
+      reader.onerror = () =>
+        reject(new Error('Unable to read uploaded file.'));
+
+      reader.readAsDataURL(file);
+    });
+  }
+
+  form.addEventListener('submit', async function (event) {
+    event.preventDefault();
+
+    errorBox.hidden = true;
+    errorBox.textContent = '';
+
+    const photoFile =
+      form.querySelector('[name="student_photo"]')?.files?.[0] || null;
+
+    const bformFile =
+      form.querySelector('[name="student_bform"]')?.files?.[0] || null;
+
+    const total =
+      (photoFile?.size || 0) +
+      (bformFile?.size || 0);
+
+    const limit = 2.4 * 1024 * 1024;
+
+    if (total > limit) {
+      errorBox.hidden = false;
+      errorBox.textContent =
+        'Combined upload size is too large. Please keep all uploaded files below 2.4 MB in total and try again.';
+      return;
+    }
+
+    const button = form.querySelector('button[type="submit"]');
+    button.disabled = true;
+    button.textContent = 'Submitting...';
+
+    try {
+      const data = new FormData(form);
+
+      const payload = {
+        student_name: data.get('student_name'),
+        guardian_name: data.get('guardian_name'),
+        student_surname: data.get('student_surname'),
+        class_applying: data.get('class_applying'),
+        previous_school: data.get('previous_school'),
+        date_of_birth: data.get('date_of_birth'),
+        student_bform_number: data.get('student_bform_number'),
+        father_cnic_number: data.get('father_cnic_number'),
+        mobile: data.get('mobile'),
+        declaration: data.get('declaration') || '',
+        bot_field: data.get('bot_field') || '',
+        student_photo: await fileToPayload(photoFile),
+        student_bform: await fileToPayload(bformFile)
+      };
+
+      const response = await fetch('/api/admission-submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(payload)
+      });
+
+      const result = await response.json().catch(() => ({}));
+
+      if (!response.ok) {
+        throw new Error(
+          result.error || 'Unable to submit application.'
+        );
+      }
+
+      window.location.href = 'admission-success.html';
+
+    } catch (error) {
+      errorBox.hidden = false;
+      errorBox.textContent =
+        error.message || 'Unable to submit application. Please try again.';
+
+      button.disabled = false;
+      button.textContent = 'Submit Application →';
+    }
+  });
+})();
+</script>
   <script src="assets/js/main.js"></script>
   <script src="assets/js/content.js"></script>
 </body>
