@@ -4,120 +4,154 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>School Admin | GHS Campus Saeedpur</title>
-
   <link rel="icon" href="/assets/images/logo.jpg">
   <link rel="stylesheet" href="admin.css">
-
   <style>
-    .login-overlay {
-      position: fixed;
-      inset: 0;
-      z-index: 100;
-      display: none;
-      align-items: center;
-      justify-content: center;
-      padding: 20px;
-      background: rgba(5, 18, 43, .68);
-    }
-
-    .login-overlay.open {
-      display: flex;
-    }
-
-    .login-box {
-      width: min(430px, 100%);
-      background: #fff;
-      border-radius: 22px;
-      padding: 26px;
-      box-shadow: 0 28px 80px rgba(0,0,0,.3);
-    }
-
-    .login-box img {
-      display: block;
-      width: 74px;
-      height: 74px;
-      margin: 0 auto 14px;
-      border-radius: 50%;
-      object-fit: cover;
-    }
-
-    .login-box h2 {
-      text-align: center;
-      margin: 0 0 6px;
-      color: #0b2a63;
-    }
-
-    .login-box .login-subtitle {
-      text-align: center;
-      color: #657184;
-      margin: 0 0 22px;
-      line-height: 1.5;
-    }
-
-    .login-field {
-      display: block;
-      margin-bottom: 14px;
-      font-weight: 700;
-      color: #14213d;
-    }
-
-    .login-field input {
-      width: 100%;
-      margin-top: 7px;
-      padding: 12px 13px;
-      border: 1px solid #cfd9e5;
-      border-radius: 10px;
-      outline: none;
-    }
-
-    .login-field input:focus {
-      border-color: #123c86;
-    }
-
-    .login-actions {
-      display: flex;
-      gap: 10px;
-      margin-top: 18px;
-    }
-
-    .login-actions button {
-      flex: 1;
-    }
-
-    .login-error {
-      margin-top: 12px;
-      padding: 10px 12px;
-      border-radius: 10px;
-      background: #fee4e2;
-      color: #9b1c1c;
-      font-size: 13px;
-      font-weight: 700;
-      display: none;
-    }
-
-    .login-error.show {
-      display: block;
-    }
+    dialog{border:0;border-radius:18px;padding:0;width:min(420px,90%);box-shadow:0 25px 70px #0004}
+    dialog::backdrop{background:#05122baa}
+    .login-box{padding:24px;background:#fff}
+    .login-box h2{margin:0 0 18px;color:#0b2a63}
+    .login-box label{display:block;font-weight:700;margin:12px 0}
+    .login-box input{width:100%;padding:12px;border:1px solid #ccd7e4;border-radius:10px;margin-top:6px}
+    .login-actions{display:flex;gap:10px;margin-top:18px}
+    .login-error{color:#b42318;font-weight:700;margin-top:10px}
   </style>
 </head>
-
 <body class="admin-bg">
 
-  <main class="admin-shell">
+<main class="admin-shell">
 
-    <header class="admin-header">
+<header class="admin-header">
+  <div class="admin-brand">
+    <img src="/assets/images/logo.jpg" alt="School logo">
+    <div>
+      <span class="admin-kicker">Secure School Administration</span>
+      <h1>GHS Campus Saeedpur Admin Panel</h1>
+      <p>Manage website content and admission applications from one place.</p>
+    </div>
+  </div>
 
-      <div class="admin-brand">
-        <img src="/assets/images/logo.jpg"
-             alt="Government High School Campus Saeedpur logo">
+  <div class="admin-userbox">
+    <span id="authState" class="auth-state">Checking login…</span>
+    <button id="loginBtn" class="admin-btn primary" type="button">Admin Login</button>
+    <button id="logoutBtn" class="admin-btn ghost" type="button" hidden>Logout</button>
+  </div>
+</header>
 
-        <div>
-          <span class="admin-kicker">
-            Secure School Administration
-          </span>
+<section class="admin-grid">
+  <a class="admin-card protected-link" href="cms.html">
+    <div class="admin-card-icon">✎</div>
+    <div>
+      <span class="card-label">Website CMS</span>
+      <h2>Website Content</h2>
+      <p>Manage notices, results, gallery, achievements, downloads and staff.</p>
+    </div>
+    <span class="card-arrow">→</span>
+  </a>
 
-          <h1>GHS Campus Saeedpur Admin Panel</h1>
+  <a class="admin-card protected-link featured" href="admissions.html">
+    <div class="admin-card-icon">▦</div>
+    <div>
+      <span class="card-label">Admissions</span>
+      <h2>Admission Applications</h2>
+      <p>View submitted applications, search records, update status and export data.</p>
+    </div>
+    <span class="card-arrow">→</span>
+  </a>
+</section>
 
-          <p>
-            Manage website content and admission applications
-            from one place.
+<section class="admin-info">
+  <strong>Privacy:</strong> Administrative records require authorized administrator login.
+</section>
+
+</main>
+
+<dialog id="loginDialog">
+  <form id="loginForm" class="login-box">
+    <h2>Administrator Login</h2>
+
+    <label>
+      Username
+      <input id="username" type="text" autocomplete="username" required>
+    </label>
+
+    <label>
+      Password
+      <input id="password" type="password" autocomplete="current-password" required>
+    </label>
+
+    <div id="loginError" class="login-error"></div>
+
+    <div class="login-actions">
+      <button type="button" id="cancelBtn" class="admin-btn ghost" style="color:#0b2a63;background:#e9eff7">Cancel</button>
+      <button type="submit" class="admin-btn primary">Sign In</button>
+    </div>
+  </form>
+</dialog>
+
+<script>
+let loggedIn=false;
+const state=document.getElementById('authState');
+const loginBtn=document.getElementById('loginBtn');
+const logoutBtn=document.getElementById('logoutBtn');
+const dialog=document.getElementById('loginDialog');
+const form=document.getElementById('loginForm');
+const errorBox=document.getElementById('loginError');
+
+function render(ok){
+  loggedIn=ok;
+  state.textContent=ok?'Signed in: Administrator':'Not signed in';
+  loginBtn.hidden=ok;
+  logoutBtn.hidden=!ok;
+}
+
+async function checkSession(){
+  try{
+    const r=await fetch('/api/admin-session',{cache:'no-store'});
+    render(r.ok);
+  }catch{render(false)}
+}
+
+loginBtn.onclick=()=>dialog.showModal();
+document.getElementById('cancelBtn').onclick=()=>dialog.close();
+
+form.onsubmit=async e=>{
+  e.preventDefault();
+  errorBox.textContent='';
+  const r=await fetch('/api/admin-login',{
+    method:'POST',
+    headers:{'Content-Type':'application/json'},
+    body:JSON.stringify({
+      username:document.getElementById('username').value.trim(),
+      password:document.getElementById('password').value
+    })
+  });
+  const data=await r.json().catch(()=>({}));
+  if(!r.ok){
+    errorBox.textContent=data.message||'Login failed';
+    return;
+  }
+  dialog.close();
+  form.reset();
+  await checkSession();
+};
+
+logoutBtn.onclick=async()=>{
+  await fetch('/api/admin-logout',{method:'POST'});
+  render(false);
+};
+
+document.querySelectorAll('.protected-link').forEach(link=>{
+  link.onclick=e=>{
+    if(!loggedIn){
+      e.preventDefault();
+      dialog.showModal();
+    }
+  };
+});
+
+checkSession();
+</script>
+
+</body>
+</html>
