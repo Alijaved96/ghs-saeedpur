@@ -4,87 +4,120 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>School Admin | GHS Campus Saeedpur</title>
+
   <link rel="icon" href="/assets/images/logo.jpg">
   <link rel="stylesheet" href="admin.css">
-  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+
+  <style>
+    .login-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 100;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      background: rgba(5, 18, 43, .68);
+    }
+
+    .login-overlay.open {
+      display: flex;
+    }
+
+    .login-box {
+      width: min(430px, 100%);
+      background: #fff;
+      border-radius: 22px;
+      padding: 26px;
+      box-shadow: 0 28px 80px rgba(0,0,0,.3);
+    }
+
+    .login-box img {
+      display: block;
+      width: 74px;
+      height: 74px;
+      margin: 0 auto 14px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    .login-box h2 {
+      text-align: center;
+      margin: 0 0 6px;
+      color: #0b2a63;
+    }
+
+    .login-box .login-subtitle {
+      text-align: center;
+      color: #657184;
+      margin: 0 0 22px;
+      line-height: 1.5;
+    }
+
+    .login-field {
+      display: block;
+      margin-bottom: 14px;
+      font-weight: 700;
+      color: #14213d;
+    }
+
+    .login-field input {
+      width: 100%;
+      margin-top: 7px;
+      padding: 12px 13px;
+      border: 1px solid #cfd9e5;
+      border-radius: 10px;
+      outline: none;
+    }
+
+    .login-field input:focus {
+      border-color: #123c86;
+    }
+
+    .login-actions {
+      display: flex;
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .login-actions button {
+      flex: 1;
+    }
+
+    .login-error {
+      margin-top: 12px;
+      padding: 10px 12px;
+      border-radius: 10px;
+      background: #fee4e2;
+      color: #9b1c1c;
+      font-size: 13px;
+      font-weight: 700;
+      display: none;
+    }
+
+    .login-error.show {
+      display: block;
+    }
+  </style>
 </head>
+
 <body class="admin-bg">
+
   <main class="admin-shell">
+
     <header class="admin-header">
+
       <div class="admin-brand">
-        <img src="/assets/images/logo.jpg" alt="Government High School Campus Saeedpur logo">
+        <img src="/assets/images/logo.jpg"
+             alt="Government High School Campus Saeedpur logo">
+
         <div>
-          <span class="admin-kicker">Secure School Administration</span>
+          <span class="admin-kicker">
+            Secure School Administration
+          </span>
+
           <h1>GHS Campus Saeedpur Admin Panel</h1>
-          <p>Manage website content and admission applications from one place.</p>
-        </div>
-      </div>
-      <div class="admin-userbox">
-        <span id="authState" class="auth-state">Checking login…</span>
-        <button id="loginBtn" class="admin-btn primary" type="button">Admin Login</button>
-        <button id="logoutBtn" class="admin-btn ghost" type="button" hidden>Logout</button>
-      </div>
-    </header>
 
-    <section class="admin-grid" aria-label="Admin tools">
-      <a class="admin-card protected-link" href="cms.html" data-protected="true">
-        <div class="admin-card-icon">✎</div>
-        <div>
-          <span class="card-label">Website CMS</span>
-          <h2>Website Content</h2>
-          <p>Manage school settings, notices, results, gallery, achievements, downloads and staff.</p>
-        </div>
-        <span class="card-arrow">→</span>
-      </a>
-
-      <a class="admin-card protected-link featured" href="admissions.html" data-protected="true">
-        <div class="admin-card-icon">▦</div>
-        <div>
-          <span class="card-label">Admissions</span>
-          <h2>Admission Applications</h2>
-          <p>View submitted applications, search records, change status, print details and export CSV.</p>
-        </div>
-        <span class="card-arrow">→</span>
-      </a>
-    </section>
-
-    <section class="admin-info">
-      <strong>Privacy:</strong> Admission records are available only after an administrator signs in with Netlify Identity. Keep Identity registration set to <strong>Invite only</strong>.
-    </section>
-  </main>
-
-  <script>
-    (() => {
-      const identity = window.netlifyIdentity;
-      const state = document.getElementById('authState');
-      const loginBtn = document.getElementById('loginBtn');
-      const logoutBtn = document.getElementById('logoutBtn');
-      const protectedLinks = document.querySelectorAll('[data-protected="true"]');
-
-      function render(user) {
-        const loggedIn = Boolean(user);
-        state.textContent = loggedIn ? `Signed in: ${user.email || 'Administrator'}` : 'Not signed in';
-        loginBtn.hidden = loggedIn;
-        logoutBtn.hidden = !loggedIn;
-        protectedLinks.forEach(link => link.classList.toggle('locked', !loggedIn));
-      }
-
-      loginBtn.addEventListener('click', () => identity.open('login'));
-      logoutBtn.addEventListener('click', () => identity.logout());
-      protectedLinks.forEach(link => {
-        link.addEventListener('click', event => {
-          if (!identity.currentUser()) {
-            event.preventDefault();
-            identity.open('login');
-          }
-        });
-      });
-
-      identity.on('init', render);
-      identity.on('login', user => { render(user); identity.close(); });
-      identity.on('logout', () => render(null));
-      setTimeout(() => render(identity.currentUser()), 250);
-    })();
-  </script>
-</body>
-</html>
+          <p>
+            Manage website content and admission applications
+            from one place.
