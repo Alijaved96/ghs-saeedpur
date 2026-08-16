@@ -6,7 +6,8 @@
   "engines": {
     "node": ">=20"
   },
-  "dependencies": {
-    "@netlify/blobs": "^10.7.10"
-  }
+"dependencies": {
+  "@netlify/blobs": "^10.7.10",
+  "@vercel/blob": "latest"
+}
 }
