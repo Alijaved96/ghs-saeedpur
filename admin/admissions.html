@@ -3,199 +3,175 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="description" content="Admission information and online admission request form for Government High School Campus Saeedpur.">
-  <title>Admissions | GHS Campus Saeedpur</title>
-  <link rel="icon" href="assets/images/logo.jpg">
-  <link rel="stylesheet" href="assets/css/style.css">
+  <title>Admission Applications | GHS Campus Saeedpur</title>
+  <link rel="icon" href="/assets/images/logo.jpg">
+  <link rel="stylesheet" href="admin.css">
 </head>
-<body>
-  <div class="topbar">
-    <div class="container topbar-inner">
-      <div>SEMIS Code: <strong>401050302</strong> &nbsp;•&nbsp; Established 1952</div>
-      <div class="quick">
-        <a href="mailto:info@ghscsaeedpur.edu.pk">info@ghscsaeedpur.edu.pk</a>
-        <a href="tel:+923013596600">0301-3596600</a>
-      </div>
-    </div>
-  </div>
 
-  <div class="welcome-ticker" role="region" aria-label="School welcome message">
-    <div class="ticker-track">
-      <span>WELCOME TO GOVERNMENT HIGH SCHOOL (CAMPUS) SAEEDPUR &nbsp; • &nbsp; DEDICATED TO EXCELLENCE IN EDUCATION &nbsp; • &nbsp; SERVING STUDENTS FROM ECE/KG TO CLASS X &nbsp; • &nbsp; SEMIS CODE: 401050302</span>
-      <span aria-hidden="true">WELCOME TO GOVERNMENT HIGH SCHOOL (CAMPUS) SAEEDPUR &nbsp; • &nbsp; DEDICATED TO EXCELLENCE IN EDUCATION &nbsp; • &nbsp; SERVING STUDENTS FROM ECE/KG TO CLASS X &nbsp; • &nbsp; SEMIS CODE: 401050302</span>
-    </div>
-  </div>
+<body class="app-shell">
 
-  <header class="site-header">
-    <div class="container header-inner">
-      <a class="brand" href="index.html">
-        <img src="assets/images/logo.jpg" alt="Government High School Campus Saeedpur logo">
-        <div>
-          <div class="brand-title">GOVERNMENT HIGH SCHOOL<br>(CAMPUS) SAEEDPUR</div>
-          <div class="brand-subtitle">Dedicated to Excellence in Education</div>
-        </div>
-      </a>
-      <button class="menu-toggle" aria-label="Open menu" aria-expanded="false">☰</button>
-      <nav class="nav">
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="academics.html">Academics</a>
-        <a href="admissions.html" class="active">Admissions</a>
-        <a href="results.html">Results</a>
-        <a href="notices.html">Notices</a>
-        <a href="staff.html">Staff</a>
-        <a href="achievements.html">Achievements</a>
-        <a href="gallery.html">Gallery</a>
-        <a href="downloads.html">Downloads</a>
-        <a href="contact.html">Contact</a>
-      </nav>
-    </div>
-  </header>
+<header class="app-topbar">
+  <div class="app-topbar-inner">
 
-  <section class="page-hero admission-hero">
-    <div class="container">
-      <div class="crumbs">Home / Admissions</div>
-      <h1>Admissions</h1>
-      <p>Admission guidance, required documents and an online admission request form for students from ECE/KG to Class X.</p>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="container grid-2 admission-intro-grid">
+    <div class="app-brand">
+      <img src="/assets/images/logo.jpg" alt="School logo">
       <div>
-        <div class="kicker">Join Our School</div>
-        <h2>Start your admission journey with confidence.</h2>
-        <p>Parents and guardians may review the commonly required documents below and submit an initial online admission request. Final admission is subject to class availability, school policy and verification by the school administration.</p>
-        <div class="callout" style="margin-top:22px">
-          <strong>Important:</strong> The school office may request additional documents depending on the student’s class, previous school and admission category.
-        </div>
+        <strong>GHS Campus Saeedpur</strong>
+        <span>Admission Administration</span>
       </div>
-      <div class="card admission-enquiry-card">
-        <div class="icon-box">☎</div>
-        <h3>Admission Enquiries</h3>
-        <p class="small" style="margin-bottom:12px">Contact the school office for official guidance and class availability.</p>
-        <div class="contact-link"><span>☎</span><a href="tel:+923013596600">0301-3596600</a></div>
-        <div class="contact-link"><span>☎</span><a href="tel:+923053769979">0305-3769979</a></div>
-        <div class="contact-link"><span>☎</span><a href="tel:+923403469734">0340-3469734</a></div>
-        <div class="contact-link"><span>✉</span><a href="mailto:info@ghscsaeedpur.edu.pk">info@ghscsaeedpur.edu.pk</a></div>
-      </div>
+    </div>
+
+    <div class="top-actions">
+      <a href="/admin/">← Admin Panel</a>
+      <button id="logoutBtn" type="button">Logout</button>
+    </div>
+
+  </div>
+</header>
+
+<main class="admin-content" id="dashboard" hidden>
+
+  <div class="page-head">
+    <div>
+      <span class="card-label">Admissions</span>
+      <h1>Admission Applications</h1>
+      <p id="signedInAs">Checking administrator session…</p>
+    </div>
+  </div>
+
+  <div class="notice-bar">
+    Student admission records are private administrative data.
+    Only authorized school administrators should access this page.
+  </div>
+
+  <section class="stats-grid">
+    <div class="stat-card">
+      <strong id="totalCount">0</strong>
+      <span>Total Applications</span>
+    </div>
+
+    <div class="stat-card">
+      <strong id="pendingCount">0</strong>
+      <span>Pending</span>
+    </div>
+
+    <div class="stat-card">
+      <strong id="approvedCount">0</strong>
+      <span>Approved</span>
+    </div>
+
+    <div class="stat-card">
+      <strong id="rejectedCount">0</strong>
+      <span>Rejected</span>
     </div>
   </section>
 
-  <section class="section alt" id="required-documents">
-    <div class="container">
-      <div class="section-head">
-        <div>
-          <div class="kicker">Admission Checklist</div>
-          <h2>Required Documents</h2>
-          <p>Please bring clear photocopies along with originals where verification is required by the school office.</p>
-        </div>
-      </div>
-      <div class="document-grid">
-        <div class="document-card"><span class="document-icon">01</span><div><h3>Student B-Form / Birth Certificate</h3><p>NADRA Child Registration Certificate (B-Form/CRC) or birth certificate, as applicable.</p></div></div>
-        <div class="document-card"><span class="document-icon">02</span><div><h3>Parent / Guardian CNIC</h3><p>Copy of the valid CNIC of the student’s parent or legal guardian.</p></div></div>
-        <div class="document-card"><span class="document-icon">03</span><div><h3>Passport-Size Photographs</h3><p>Two recent passport-size photographs of the student.</p></div></div>
-        <div class="document-card"><span class="document-icon">04</span><div><h3>Previous Result / Progress Card</h3><p>Latest result card or progress report for students who have attended another school.</p></div></div>
-        <div class="document-card"><span class="document-icon">05</span><div><h3>School Leaving Certificate</h3><p>Original school leaving / transfer certificate for transfer cases or admission to higher classes, where applicable.</p></div></div>
-        <div class="document-card"><span class="document-icon">06</span><div><h3>Other Supporting Documents</h3><p>Domicile/PRC or any additional document may be requested if required for a particular admission category.</p></div></div>
-      </div>
-      <div class="documents-note"><strong>Note:</strong> Documentary requirements may vary by academic session and class. Final requirements will be confirmed by the school administration.</div>
+  <div class="toolbar">
+    <input
+      id="searchInput"
+      class="control wide-mobile"
+      type="search"
+      placeholder="Search student, father, B-Form, CNIC or phone">
+
+    <select id="statusFilter" class="control">
+      <option value="All">All Statuses</option>
+      <option value="Pending">Pending</option>
+      <option value="Approved">Approved</option>
+      <option value="Rejected">Rejected</option>
+    </select>
+
+    <button id="refreshBtn" class="action-btn secondary" type="button">
+      Refresh
+    </button>
+
+    <button id="exportBtn" class="action-btn" type="button">
+      Export CSV
+    </button>
+  </div>
+
+  <div class="table-card">
+
+    <div id="loadingState" class="loading-state">
+      Loading admission applications…
     </div>
-  </section>
 
-  <section class="section" id="admission-form">
-    <div class="container admission-form-layout">
-      <div class="admission-form-copy">
-        <div class="kicker">Online Admission Application Form</div>
-        <h2>Complete the Admission Application</h2>
-        <p>Please complete the application form carefully and provide accurate information. Submission of this form is an initial application and does not guarantee admission.</p>
-        <div class="admission-points">
-          <div><span>✓</span><p><strong>Step 1:</strong> Submit the online request.</p></div>
-          <div><span>✓</span><p><strong>Step 2:</strong> School administration reviews the details.</p></div>
-          <div><span>✓</span><p><strong>Step 3:</strong> Parent/guardian is contacted for document verification and further guidance.</p></div>
-        </div>
-        <div class="privacy-note"><strong>Optional online attachments:</strong> You may attach a recent student photograph and a clear copy of the student's B-Form/CRC. These uploads are optional and are used only to assist admission processing. The school may still require original documents or photocopies for verification.</div>
-      </div>
+    <div id="errorState" class="error-state" hidden></div>
 
-      <div class="admission-form-card">
-        <form id="admissionEnquiryForm" name="admission-enquiry" method="POST" action="admission-success.html" enctype="multipart/form-data" data-netlify="true" data-netlify-honeypot="bot-field">
-          <input type="hidden" name="form-name" value="admission-enquiry">
-          <p class="hidden-field"><label>Do not fill this out: <input name="bot-field"></label></p>
-
-          <div class="form-section-title">Student Information</div>
-          <div class="admission-fields two-cols">
-            <label>Student's Full Name <span>*</span><input class="input" type="text" name="student_name" autocomplete="name" required></label>
-            <label>Father's Full Name <span>*</span><input class="input" type="text" name="guardian_name" required></label>
-            <label>Surname <span>*</span><input class="input" type="text" name="student_surname" autocomplete="family-name" required></label>
-            <label>Class Applying For <span>*</span><select class="input" name="class_applying" required><option value="">Select a Class</option><option>ECE/KG</option><option>Class I</option><option>Class II</option><option>Class III</option><option>Class IV</option><option>Class V</option><option>Class VI</option><option>Class VII</option><option>Class VIII</option><option>Class IX</option><option>Class X</option></select></label>
-            <label>Last School Attended <span>*</span><input class="input" type="text" name="previous_school" placeholder="Enter N/A if not applicable" required></label>
-            <label>Date of Birth <span>*</span><input class="input" type="date" name="date_of_birth" required></label>
-            <label>Student B-Form / CRC Number <span>*</span><input class="input" type="text" name="student_bform_number" inputmode="numeric" maxlength="15" placeholder="XXXXX-XXXXXXX-X" pattern="[0-9]{5}-?[0-9]{7}-?[0-9]" title="Enter a valid 13-digit B-Form/CRC number" required><small>Enter the 13-digit B-Form/CRC number. Hyphens are optional.</small></label>
-            <label>Father's CNIC Number <span>*</span><input class="input" type="text" name="father_cnic_number" inputmode="numeric" maxlength="15" placeholder="XXXXX-XXXXXXX-X" pattern="[0-9]{5}-?[0-9]{7}-?[0-9]" title="Enter a valid 13-digit CNIC number" required><small>Enter the 13-digit CNIC number. Hyphens are optional.</small></label>
-            <label>Phone Number <span>*</span><input class="input" type="tel" name="mobile" inputmode="tel" maxlength="12" placeholder="03XX-XXXXXXX" pattern="03[0-9]{2}-?[0-9]{7}" title="Enter a valid Pakistani mobile number, for example 0301-1234567" required></label>
-          </div>
-
-          <div class="form-section-title">Optional Supporting Documents</div>
-          <div class="upload-guidance">The following attachments are optional. If you choose to upload them, please use a clear JPG or PNG image for the student photograph and a clear JPG, PNG, or PDF copy of the B-Form/CRC. Keep the combined upload size below 7.5 MB.</div>
-          <div class="admission-fields two-cols">
-            <label>Student Photograph <small>(Optional)</small><input class="input file-input" type="file" name="student_photo" accept="image/jpeg,image/png"><small>Optional: upload a recent passport-style JPG or PNG photograph.</small></label>
-            <label>Student B-Form / CRC Copy <small>(Optional)</small><input class="input file-input" type="file" name="student_bform" accept="image/jpeg,image/png,application/pdf"><small>Optional: upload a clear image or PDF copy of the student's B-Form / CRC.</small></label>
-          </div>
-          <div id="uploadSizeError" class="upload-error" role="alert" hidden></div>
-
-          <label class="declaration-check"><input type="checkbox" name="declaration" value="Agreed" required><span>I confirm that the information provided above is accurate to the best of my knowledge. I understand that final admission is subject to verification of documents, class availability, and school policy.</span></label>
-
-          <button class="btn btn-primary admission-submit" type="submit">Submit Application →</button>
-          <p class="form-help">Fields marked with an asterisk (*) are required.</p>
-        </form>
-      </div>
+    <div id="emptyState" class="empty-state" hidden>
+      No admission applications found.
     </div>
-  </section>
 
-  <section class="section alt compact">
-    <div class="container">
-      <div class="section-head">
-        <div><div class="kicker">Simple Process</div><h2>How admission works.</h2></div>
-      </div>
-      <div class="grid-3">
-        <div class="card"><div class="icon-box">1</div><h3>Submit Request</h3><p>Complete the online admission request or contact the school office.</p></div>
-        <div class="card"><div class="icon-box">2</div><h3>Prepare Documents</h3><p>Arrange the required documents and originals for verification.</p></div>
-        <div class="card"><div class="icon-box">3</div><h3>Verify & Complete</h3><p>Visit the school when directed to complete verification and the official admission process.</p></div>
-      </div>
-    </div>
-  </section>
+    <div id="tableWrap" class="table-wrap" hidden>
+      <table class="records-table">
+        <thead>
+          <tr>
+            <th>Student</th>
+            <th>Father's Name</th>
+            <th>Class</th>
+            <th>Phone</th>
+            <th>Submitted</th>
+            <th>Status</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
 
-  <footer class="footer">
-    <div class="container footer-main">
-      <div><div class="footer-brand"><img src="assets/images/logo.jpg" alt="School logo"><div><strong>Government High School (Campus) Saeedpur</strong><p style="margin:4px 0 0">Dedicated to Excellence in Education</p></div></div><p>Saeedpur, Taluka Talhar, District Badin, Sindh. A co-educational public school serving learners from ECE/KG to Class X.</p></div>
-      <div><h4>Quick Links</h4><div class="footer-links"><a href="about.html">About School</a><a href="admissions.html">Admissions</a><a href="results.html">Results</a><a href="notices.html">Notices</a></div></div>
-      <div><h4>Resources</h4><div class="footer-links"><a href="staff.html">Staff</a><a href="achievements.html">Achievements</a><a href="gallery.html">Gallery</a><a href="downloads.html">Downloads</a></div></div>
-      <div><h4>Contact</h4><div class="footer-links"><a href="mailto:info@ghscsaeedpur.edu.pk">info@ghscsaeedpur.edu.pk</a><a href="tel:+923013596600">0301-3596600</a><a href="tel:+923053769979">0305-3769979</a><a href="tel:+923403469734">0340-3469734</a></div></div>
+        <tbody id="recordsBody"></tbody>
+      </table>
     </div>
-    <div class="container footer-bottom"><span>© <span data-current-year></span> Government High School (Campus) Saeedpur. All rights reserved.</span><span>SEMIS 401050302 • Established 1952</span></div>
-  </footer>
-  <script>
-    (function(){
-      const form=document.getElementById('admissionEnquiryForm');
-      const errorBox=document.getElementById('uploadSizeError');
-      if(!form||!errorBox) return;
-      form.addEventListener('submit',function(event){
-        const files=[...form.querySelectorAll('input[type="file"]')].flatMap(input=>[...input.files]);
-        const total=files.reduce((sum,file)=>sum+file.size,0);
-        const limit=7.5*1024*1024;
-        if(total>limit){
-          event.preventDefault();
-          errorBox.hidden=false;
-          errorBox.textContent='Combined upload size is too large. Please keep all uploaded files below 7.5 MB in total and try again.';
-          errorBox.scrollIntoView({behavior:'smooth',block:'center'});
-        }else{
-          errorBox.hidden=true;
-          errorBox.textContent='';
-        }
-      });
-    })();
-  </script>
-  <script src="assets/js/main.js"></script>
-  <script src="assets/js/content.js"></script>
+
+  </div>
+
+</main>
+
+<section id="loginPanel" class="login-panel" hidden>
+  <img src="/assets/images/logo.jpg" alt="School logo">
+  <h1>Administrator Login Required</h1>
+  <p>
+    Your administrator session is not active.
+    Please return to the Admin Panel and sign in.
+  </p>
+  <a class="action-btn" href="/admin/">Go to Admin Login</a>
+</section>
+
+<div id="detailModal" class="modal-backdrop">
+
+  <div class="modal">
+
+    <div class="modal-head">
+      <h2>Admission Application Details</h2>
+      <button id="closeModal" class="modal-close" type="button">×</button>
+    </div>
+
+    <div id="detailGrid" class="detail-grid"></div>
+
+    <div class="modal-actions">
+
+      <select id="modalStatus" class="status-select">
+        <option value="Pending">Pending</option>
+        <option value="Approved">Approved</option>
+        <option value="Rejected">Rejected</option>
+      </select>
+
+      <button id="saveStatusBtn" class="action-btn" type="button">
+        Save Status
+      </button>
+
+      <button id="printBtn" class="action-btn secondary" type="button">
+        Print
+      </button>
+
+      <button id="downloadBtn" class="action-btn secondary" type="button">
+        Download
+      </button>
+
+    </div>
+
+  </div>
+</div>
+
+<div id="liveRegion" class="sr-live" aria-live="polite"></div>
+
+<script src="admissions.js"></script>
+
 </body>
 </html>
